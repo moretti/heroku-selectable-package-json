@@ -4,10 +4,10 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-if [ -f $ENV_DIR/PROCFILE_PATH ]; then
-  PROCFILE_PATH=`cat $ENV_DIR/PROCFILE_PATH`
-  mv $BUILD_DIR/$PROCFILE_PATH $BUILD_DIR/Procfile
-  echo "-----> Using $PROCFILE_PATH as Procfile"
+if [ -f $ENV_DIR/PACKAGE_JSON_PATH ]; then
+  PACKAGE_JSON_PATH=`cat $ENV_DIR/PACKAGE_JSON_PATH`
+  mv $BUILD_DIR/$PACKAGE_JSON_PATH $BUILD_DIR/package.json
+  echo "-----> Using $PACKAGE_JSON_PATH as package.json"
 else
-  echo "-----> PROCFILE_PATH not set in environment, doing nothing."
+  echo "-----> PACKAGE_JSON_PATH not set in environment, doing nothing."
 fi

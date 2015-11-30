@@ -1,15 +1,14 @@
-heroku-selectable-procfile
+heroku-selectable-package-json
 ==========================
 
 ## Usage
 
-It's very simple.  This buildpack just moves the Procfile located at `$PROCFILE_PATH` to ./Procfile.  Use with [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) to customize which Procfile Heroku runs.
+It's very simple. This buildpack just moves the package.json located at `$PACKAGE_JSON_PATH` to `./package.json`.
 
 ```
-$ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
-$ heroku config:add PROCFILE_PATH=deployment/heroku/Procfile.heroku
+$ heroku config:add PACKAGE_JSON_PATH=modules/server/package.json
 
 $ cat .buildpacks
-https://github.com/cantino/heroku-selectable-procfile.git
-https://github.com/heroku/heroku-buildpack-ruby.git
+https://github.com/moretti/heroku-selectable-package-json.git
+https://github.com/heroku/heroku-buildpack-nodejs
 ```
